@@ -70,3 +70,25 @@ app/build/outputs/mapping/
 
 # ── Claude / AI session artifacts ───────────────────────────
 *.zip
+
+
+# ── Already-tracked folders (force untrack these) ────────────
+.gradle/
+gradle/
+build/
+app/build/
+
+# ── Android Studio misc ──────────────────────────────────────
+*.hprof
+.cxx/
+.navigation/
+*.orig
+
+# ── Windows thumbnail cache ──────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── Local config — never commit ──────────────────────────────
+local.properties
+!local.properties.example
