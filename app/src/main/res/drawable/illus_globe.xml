@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Translate card illustration — stylised globe with translation arrows.
+  Designed to read at 80×80dp. Replace with a raster PNG of the same
+  name in drawable-xxxhdpi/ for higher fidelity.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+
+    <!-- Globe sphere (warm white face) -->
+    <path
+        android:pathData="M40,12 a28,28 0 1,0 0.001,0 Z"
+        android:fillColor="#F5FBF5"/>
+
+    <!-- Continent silhouettes (simplified) -->
+    <path
+        android:pathData="M22,32 C26,28 30,26 35,28 C36,32 33,36 28,38 C25,38 22,36 22,32 Z"
+        android:fillColor="#3D8B5C"/>
+    <path
+        android:pathData="M44,42 C50,40 56,42 58,46 C56,52 50,54 44,52 C42,48 42,44 44,42 Z"
+        android:fillColor="#3D8B5C"/>
+    <path
+        android:pathData="M30,50 C34,48 40,50 42,54 C40,58 34,58 30,56 C28,54 28,52 30,50 Z"
+        android:fillColor="#3D8B5C"/>
+
+    <!-- Equator line -->
+    <path
+        android:pathData="M14,40 L66,40"
+        android:strokeColor="#5DA8E8"
+        android:strokeWidth="0.8"
+        android:fillColor="#00000000"/>
+
+    <!-- Meridian -->
+    <path
+        android:pathData="M40,14 Q26,40 40,66 Q54,40 40,14"
+        android:strokeColor="#5DA8E8"
+        android:strokeWidth="0.8"
+        android:fillColor="#00000000"/>
+
+    <!-- Globe outline -->
+    <path
+        android:pathData="M40,12 a28,28 0 1,0 0.001,0 Z"
+        android:strokeColor="#1F4F30"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"/>
+
+    <!-- Letter A in a chip (top-right) -->
+    <path
+        android:pathData="M58,8 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0"
+        android:fillColor="#FFC93C"/>
+    <path
+        android:pathData="M55,12 L58,4 L61,12 M56.5,9 L59.5,9"
+        android:strokeColor="#3D2C00"
+        android:strokeWidth="1.4"
+        android:fillColor="#00000000"/>
+
+    <!-- Translation arrows -->
+    <path
+        android:pathData="M62,28 L70,32 L62,36 L62,33 L66,33 L66,31 L62,31 Z"
+        android:fillColor="#5B7DD8"/>
+</vector>

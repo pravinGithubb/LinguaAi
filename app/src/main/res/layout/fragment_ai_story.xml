@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Lernix-style title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onBackPressed"
+                android:contentDescription="Back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI Story"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp" android:layout_marginTop="-16dp">
+
+            <TextView android:id="@+id/tv_reading_lang"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center" android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Controls card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_controls"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                style="@style/Card.Standard" android:layout_marginBottom="12dp" android:alpha="0">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Level" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_secondary" android:layout_marginBottom="6dp"/>
+                    <Spinner android:id="@+id/spinner_level"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:background="@drawable/bg_lang_chip"
+                        android:paddingHorizontal="12dp" android:layout_marginBottom="14dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Genre" android:textSize="13sp" android:textStyle="bold"
+                        android:textColor="@color/text_secondary" android:layout_marginBottom="6dp"/>
+                    <Spinner android:id="@+id/spinner_genre"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:background="@drawable/bg_lang_chip"
+                        android:paddingHorizontal="12dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Generate button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_generate_story"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="✨  Generate Story"
+                android:textSize="15sp" android:backgroundTint="@color/primary"
+                app:cornerRadius="16dp" android:layout_marginBottom="16dp" android:alpha="0"/>
+
+            <!-- Loading -->
+            <ProgressBar android:id="@+id/progress_bar"
+                android:layout_width="48dp" android:layout_height="48dp"
+                android:layout_gravity="center" android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tv_loading_msg"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="AI is writing your story… ✍️"
+                android:gravity="center" android:textSize="14sp"
+                android:textColor="@color/text_secondary" android:visibility="gone"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Story content -->
+            <LinearLayout android:id="@+id/card_story_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone" android:alpha="0">
+
+                <!-- Story header row -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+                    <TextView android:id="@+id/tv_story_title"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="22sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+                    <TextView android:id="@+id/tv_level_badge"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="11sp" android:textColor="@color/primary"
+                        android:background="@drawable/bg_lang_chip"
+                        android:paddingHorizontal="10dp" android:paddingVertical="4dp"/>
+                </LinearLayout>
+
+                <!-- Action buttons row -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="12dp">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_speak_story"
+                        android:layout_width="0dp" android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="🔊  Read Aloud" android:textSize="13sp"
+                        android:backgroundTint="@color/primary" app:cornerRadius="12dp"
+                        android:enabled="false" android:layout_marginEnd="8dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_copy_story"
+                        android:layout_width="0dp" android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="📋  Copy" android:textSize="13sp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/primary" app:cornerRadius="12dp"/>
+                </LinearLayout>
+
+                <!-- Story body -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    style="@style/Card.Standard" android:layout_marginBottom="12dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="20dp">
+                        <TextView android:id="@+id/tv_story_body"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textSize="16sp" android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Vocabulary card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_story_vocab"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                    app:cardBackgroundColor="#E8F5E9"
+                    android:layout_marginBottom="12dp" android:alpha="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📚  Key Vocabulary" android:textSize="14sp"
+                            android:textStyle="bold" android:textColor="@color/text_primary"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView android:id="@+id/tv_story_vocab"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/text_primary"
+                            android:fontFamily="monospace" android:lineSpacingExtra="5dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Comprehension questions -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_story_questions"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                    app:cardBackgroundColor="#EDE7F6"
+                    android:alpha="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="❓  Comprehension Check" android:textSize="14sp"
+                            android:textStyle="bold" android:textColor="@color/text_primary"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView android:id="@+id/tv_story_questions"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="5dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

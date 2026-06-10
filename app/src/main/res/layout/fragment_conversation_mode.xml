@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+        <!-- Lernix-style title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onBackPressed"
+                android:contentDescription="Back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conversation"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    <!-- ══ PICKER SCREEN ══ -->
+    <androidx.core.widget.NestedScrollView android:id="@+id/layout_picker"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Choose a scenario" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/text_primary" android:layout_marginBottom="12dp"/>
+            <LinearLayout android:id="@+id/container_scenarios"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ══ CHAT SCREEN ══ -->
+    <LinearLayout android:id="@+id/layout_chat"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:orientation="vertical" android:visibility="gone">
+
+        <!-- Scenario header bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:padding="14dp" android:background="@color/surface">
+            <TextView android:id="@+id/tv_scenario_title"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp" android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_replay_last"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="🔊" android:textSize="14sp" android:minWidth="0dp"
+                android:paddingHorizontal="12dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/primary" app:cornerRadius="10dp"
+                android:layout_marginEnd="6dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_end_conversation"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="End" android:textSize="12sp" android:minWidth="0dp"
+                android:paddingHorizontal="12dp"
+                android:backgroundTint="@color/accent" app:cornerRadius="10dp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="@color/divider"/>
+
+        <!-- Messages scroll -->
+        <androidx.core.widget.NestedScrollView android:id="@+id/scroll_messages"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:padding="12dp">
+            <LinearLayout android:id="@+id/container_messages"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Thinking indicator -->
+        <ProgressBar android:id="@+id/progress_thinking"
+            android:layout_width="28dp" android:layout_height="28dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" android:layout_marginBottom="4dp"/>
+
+        <!-- Suggestion card -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/card_suggestion"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFF8E1"
+            android:layout_marginHorizontal="12dp" android:layout_marginBottom="6dp"
+            android:visibility="gone">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="12dp" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💡" android:textSize="18sp" android:layout_marginEnd="8dp"/>
+                <TextView android:id="@+id/tv_suggestion"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:textSize="13sp"
+                    android:textColor="@color/text_primary" android:textStyle="italic"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_use_suggestion"
+                    android:layout_width="wrap_content" android:layout_height="32dp"
+                    android:text="Use" android:textSize="11sp" android:minWidth="0dp"
+                    android:paddingHorizontal="10dp"
+                    android:backgroundTint="@color/primary" app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Input row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="12dp"
+            android:background="@color/surface" android:gravity="center_vertical">
+            <EditText android:id="@+id/et_type_reply"
+                android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1" android:hint="Or type a reply…"
+                android:textSize="14sp" android:background="@drawable/bg_lang_chip"
+                android:paddingHorizontal="14dp" android:layout_marginEnd="8dp"
+                android:imeOptions="actionSend" android:inputType="text"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_send_type"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:text="↑" android:textSize="20sp" android:minWidth="0dp"
+                android:paddingHorizontal="16dp"
+                android:backgroundTint="@color/primary" app:cornerRadius="14dp"
+                android:layout_marginEnd="8dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_speak"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:text="🎤  Speak" android:textSize="13sp"
+                android:backgroundTint="@color/primary" app:cornerRadius="14dp"
+                android:paddingHorizontal="14dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

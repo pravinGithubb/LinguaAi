@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The background colour here is just a placeholder. The fragment overrides it
+  via setBackgroundTintList based on the score band (green/blue/amber/red).
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/primary"/>
+</shape>

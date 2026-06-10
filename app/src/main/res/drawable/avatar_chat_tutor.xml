@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Chat-screen AI avatar — cornflower-blue robot.
+
+  Replaces the previous tutor portrait. Tech-forward design that hints
+  at "this is the AI you're talking to" rather than impersonating a
+  human. Uses the app's primary cornflower blue + a coral accent eye
+  glow that ties into the app's secondary accent colour.
+
+  Style:
+    • Friendly rounded "head" (squircle, not rectangle)
+    • Big single-piece visor with two eyes — readable from a distance
+    • Antenna with a glowing dot — signals "AI is online"
+    • Cyan side panels suggest tech without being cold
+    • Sits on a soft cream tile (the parent FrameLayout sets the bg)
+
+  TODO (optional): drop avatar_chat_tutor.png at 360×480 into
+  res/drawable-xxhdpi/ to override with a real raster illustration.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="180dp"
+    android:viewportWidth="140"
+    android:viewportHeight="180">
+
+    <!-- Soft cream background tile so the robot pops against the
+         cool app gradient -->
+    <path android:pathData="M0,0 L140,0 L140,180 L0,180 Z"
+        android:fillColor="#F0F7FF"/>
+
+    <!-- Antenna stem -->
+    <path android:pathData="M70,18 L70,32"
+        android:strokeColor="#3F5FB8" android:strokeWidth="2.5"/>
+
+    <!-- Antenna glow (signals "online") -->
+    <path
+        android:pathData="M70,16 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0"
+        android:fillColor="#FFE066" android:fillAlpha="0.45"/>
+    <path
+        android:pathData="M70,16 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#FFD400"/>
+
+    <!-- Head: rounded squircle, cornflower blue body -->
+    <path
+        android:pathData="M30,40 C30,32 38,30 50,30 L90,30 C102,30 110,32 110,40 L110,116 C110,128 102,134 90,134 L50,134 C38,134 30,128 30,116 Z"
+        android:fillColor="#5B7DD8"/>
+
+    <!-- Top highlight band — subtle gradient suggestion -->
+    <path
+        android:pathData="M30,40 C30,32 38,30 50,30 L90,30 C102,30 110,32 110,40 L110,52 L30,52 Z"
+        android:fillColor="#7B9DF7"/>
+
+    <!-- Side ear-panels (cyan accent — tech feel) -->
+    <path
+        android:pathData="M22,72 L30,72 L30,98 L22,98 C18,98 16,94 16,90 L16,80 C16,76 18,72 22,72 Z"
+        android:fillColor="#3DD0D8"/>
+    <path
+        android:pathData="M118,72 L110,72 L110,98 L118,98 C122,98 124,94 124,90 L124,80 C124,76 122,72 118,72 Z"
+        android:fillColor="#3DD0D8"/>
+
+    <!-- Visor: single piece dark glass spanning both eyes -->
+    <path
+        android:pathData="M40,62 L100,62 C104,62 106,64 106,68 L106,90 C106,94 104,96 100,96 L40,96 C36,96 34,94 34,90 L34,68 C34,64 36,62 40,62 Z"
+        android:fillColor="#0E1632"/>
+
+    <!-- Visor inner reflection -->
+    <path
+        android:pathData="M38,68 L60,68 L58,72 L38,72 Z"
+        android:fillColor="#1F2A4A"/>
+
+    <!-- Left eye (cornflower glow) -->
+    <path
+        android:pathData="M55,79 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0"
+        android:fillColor="#7B9DF7" android:fillAlpha="0.5"/>
+    <path
+        android:pathData="M55,79 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#A8C0FF"/>
+    <!-- Eye highlight -->
+    <path
+        android:pathData="M54,77 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Right eye -->
+    <path
+        android:pathData="M85,79 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0"
+        android:fillColor="#7B9DF7" android:fillAlpha="0.5"/>
+    <path
+        android:pathData="M85,79 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#A8C0FF"/>
+    <path
+        android:pathData="M84,77 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Mouth: small subtle curve (friendly) -->
+    <path
+        android:pathData="M60,114 Q70,120 80,114"
+        android:strokeColor="#A8C0FF" android:strokeWidth="2"
+        android:fillColor="#00000000"/>
+
+    <!-- Status indicator chip on chest -->
+    <path
+        android:pathData="M55,124 L85,124 C87,124 88,125 88,127 L88,129 C88,131 87,132 85,132 L55,132 C53,132 52,131 52,129 L52,127 C52,125 53,124 55,124 Z"
+        android:fillColor="#1F2A4A"/>
+    <path
+        android:pathData="M58,128 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0"
+        android:fillColor="#5DB075"/>
+
+    <!-- Body / base: subtle shoulders peeking from below the head -->
+    <path
+        android:pathData="M14,180 C14,160 30,144 56,140 L56,144 C56,150 62,154 70,154 C78,154 84,150 84,144 L84,140 C110,144 126,160 126,180 Z"
+        android:fillColor="#3F5FB8"/>
+</vector>

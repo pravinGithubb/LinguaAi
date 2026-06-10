@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Practice card illustration — student silhouette with books and a small
+  globe. Designed for 120×120dp slots. Replace with a raster PNG of the
+  same name in drawable-xxxhdpi/ to swap in higher-fidelity art.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Stack of books (background) -->
+    <path
+        android:pathData="M8,80 L8,98 L46,98 L46,80 Z"
+        android:fillColor="#E64C4C"/>
+    <path
+        android:pathData="M12,68 L12,80 L42,80 L42,68 Z"
+        android:fillColor="#FFC93C"/>
+    <path
+        android:pathData="M16,58 L16,68 L40,68 L40,58 Z"
+        android:fillColor="#5DA8E8"/>
+
+    <!-- Tiny globe to the right of the books -->
+    <path
+        android:pathData="M88,72 m-14,0 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0"
+        android:fillColor="#7BCFD8"/>
+    <path
+        android:pathData="M76,72 L100,72 M88,58 Q80,72 88,86 Q96,72 88,58"
+        android:strokeColor="#1F4F30"
+        android:strokeWidth="0.8"
+        android:fillColor="#00000000"/>
+
+    <!-- Student head -->
+    <path
+        android:pathData="M58,28 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0"
+        android:fillColor="#F5D0A9"/>
+
+    <!-- Hair -->
+    <path
+        android:pathData="M46,28 C46,18 52,12 58,12 C64,12 70,18 70,28 C70,32 68,34 66,36 C64,32 60,30 58,30 C56,30 52,32 50,36 C48,34 46,32 46,28 Z"
+        android:fillColor="#3A2818"/>
+
+    <!-- Eyes -->
+    <path android:pathData="M53,28 m-1.2,0 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0" android:fillColor="#1F2A4A"/>
+    <path android:pathData="M63,28 m-1.2,0 a1.2,1.2 0 1,0 2.4,0 a1.2,1.2 0 1,0 -2.4,0" android:fillColor="#1F2A4A"/>
+
+    <!-- Smile -->
+    <path
+        android:pathData="M54,34 Q58,36 62,34"
+        android:strokeColor="#C66"
+        android:strokeWidth="1.4"
+        android:fillColor="#00000000"/>
+
+    <!-- Body / blue shirt -->
+    <path
+        android:pathData="M44,42 C44,42 48,40 58,40 C68,40 72,42 72,42 L78,80 C78,84 74,86 58,86 C42,86 38,84 38,80 Z"
+        android:fillColor="#5B7DD8"/>
+
+    <!-- Open book in hands -->
+    <path
+        android:pathData="M44,62 L58,58 L72,62 L72,76 L58,72 L44,76 Z"
+        android:fillColor="#FFFFFF"/>
+    <path
+        android:pathData="M58,58 L58,72"
+        android:strokeColor="#9AA3B8"
+        android:strokeWidth="0.8"
+        android:fillColor="#00000000"/>
+
+    <!-- Graduation cap (small accent) -->
+    <path
+        android:pathData="M44,16 L58,10 L72,16 L58,22 Z"
+        android:fillColor="#1F2A4A"/>
+    <path
+        android:pathData="M70,17 L72,28 L74,28 L72,17 Z"
+        android:fillColor="#FFC93C"/>
+</vector>

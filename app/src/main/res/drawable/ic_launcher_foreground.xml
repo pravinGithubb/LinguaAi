@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  App icon foreground — drawn on top of the cornflower-blue background
+  (set in mipmap-*/ic_launcher.xml as @color/primary).
+
+  Design: stylised speech bubble containing a gold sparkle + the
+  letter 'L' for LinguaAI. Reads as both "language learning" (chat
+  bubble, brand letter) and "AI" (sparkle is the ✨ icon many AI
+  products use).
+
+  Adaptive-icon viewport is 108×108 with 18px safe-zone padding on
+  every side, so the meaningful content sits in the central 72×72
+  region. Stays crisp at every density (mdpi 48 → xxxhdpi 192).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Speech bubble white body — soft rounded square with tail -->
+    <path
+        android:pathData="M30,30 C30,28 32,26 34,26 L74,26 C76,26 78,28 78,30 L78,68 C78,70 76,72 74,72 L52,72 L42,82 L42,72 L34,72 C32,72 30,70 30,68 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Soft inner shadow (subtle depth so the bubble doesn't
+         look pasted-on) -->
+    <path
+        android:pathData="M30,30 C30,28 32,26 34,26 L74,26 C76,26 78,28 78,30 L78,32 L30,32 Z"
+        android:fillColor="#EAF1FF"/>
+
+    <!-- Letter L (LinguaAI) — anchors the bubble -->
+    <path
+        android:pathData="M44,38 L44,62 L58,62 L58,57 L50,57 L50,38 Z"
+        android:fillColor="#5B7DD8"/>
+
+    <!-- AI sparkle — top-right of the bubble -->
+    <path
+        android:pathData="M68,38 L70,44 L76,46 L70,48 L68,54 L66,48 L60,46 L66,44 Z"
+        android:fillColor="#FFB347"/>
+
+    <!-- Small accompanying sparkle below for visual rhythm -->
+    <path
+        android:pathData="M64,58 L65,61 L68,62 L65,63 L64,66 L63,63 L60,62 L63,61 Z"
+        android:fillColor="#FFD568"/>
+</vector>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LinguaAI</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_translate">Translate</string>
+    <string name="nav_voice">Voice</string>
+    <string name="nav_progress">Progress</string>
+    <string name="onboarding_title">Hello, Language\nLearner! \uD83D\uDC4B</string>
+    <string name="onboarding_subtitle">Choose your languages and start your AI-powered journey</string>
+    <string name="btn_start">Start Learning</string>
+    <string name="hint_message">Message your AI tutor&#8230;</string>
+    <string name="hint_input">Type or paste text&#8230;</string>
+    <string name="btn_translate">Translate</string>
+    <string name="translating">Translating&#8230;</string>
+    <string name="translation_placeholder">Translation appears here</string>
+    <string name="copied">Copied to clipboard!</string>
+    <string name="voice_idle">Tap mic &#183; Speak &#183; Get instant translation</string>
+    <string name="voice_listening">Listening&#8230; tap mic to stop</string>
+    <string name="voice_processing">Translating&#8230;</string>
+    <string name="voice_done">Done &#183; Tap mic to translate again</string>
+    <string name="mic_permission_rationale">Microphone access is needed to hear your speech and translate it</string>
+</resources>

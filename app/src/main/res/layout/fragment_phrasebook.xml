@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+        <!-- Lernix-style title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onBackPressed"
+                android:contentDescription="Back"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phrasebook"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_lang_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    <!-- Categories -->
+    <LinearLayout android:id="@+id/layout_categories"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="14dp" android:alpha="0">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Categories" android:textSize="14sp" android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_favorites"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="⭐ Favorites" android:textSize="12sp"
+                android:minWidth="0dp" android:paddingHorizontal="12dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/gold" android:textColor="@color/gold"
+                app:cornerRadius="12dp"/>
+        </LinearLayout>
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout android:id="@+id/container_categories"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <!-- Phrase list -->
+    <LinearLayout android:id="@+id/layout_phrase_list"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:orientation="vertical" android:alpha="0">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/tv_current_category"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="15sp" android:textStyle="bold"
+                    android:textColor="@color/text_primary"/>
+                <TextView android:id="@+id/tv_phrase_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="11sp" android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_generate"
+                android:layout_width="wrap_content" android:layout_height="40dp"
+                android:text="✨ Generate" android:textSize="13sp"
+                android:minWidth="0dp" android:paddingHorizontal="14dp"
+                android:backgroundTint="@color/primary" app:cornerRadius="12dp"/>
+        </LinearLayout>
+
+        <ProgressBar android:id="@+id/progress_bar"
+            android:layout_width="32dp" android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" android:layout_marginBottom="6dp"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+            android:paddingHorizontal="14dp" android:paddingBottom="20dp">
+            <LinearLayout android:id="@+id/container_phrases"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</LinearLayout>

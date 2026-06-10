@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Lernix-style title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onBackPressed"
+                android:contentDescription="Back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily Lesson"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp" android:layout_marginTop="-16dp">
+
+            <!-- Topic picker card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_topic_picker"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                style="@style/Card.Standard" android:layout_marginBottom="12dp" android:alpha="0">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Choose a topic" android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="12dp"/>
+                    <Spinner android:id="@+id/spinner_topic"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_lang_chip"
+                        android:paddingHorizontal="12dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Generate button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_generate_lesson"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:text="✨  Generate Lesson"
+                android:textSize="15sp" android:backgroundTint="@color/primary"
+                app:cornerRadius="16dp" android:layout_marginBottom="16dp" android:alpha="0"/>
+
+            <!-- Loading -->
+            <ProgressBar android:id="@+id/progress_bar"
+                android:layout_width="48dp" android:layout_height="48dp"
+                android:layout_gravity="center" android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:id="@+id/tv_loading_msg"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="AI is preparing your lesson… ✨"
+                android:gravity="center" android:textSize="14sp"
+                android:textColor="@color/text_secondary" android:visibility="gone"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Lesson content (all hidden until loaded) -->
+            <LinearLayout android:id="@+id/card_lesson_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone" android:alpha="0">
+
+                <!-- Lesson title -->
+                <TextView android:id="@+id/tv_lesson_title"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="20sp" android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="4dp"/>
+                <TextView android:id="@+id/tv_lesson_intro"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textSize="14sp" android:textColor="@color/text_secondary"
+                    android:lineSpacingExtra="4dp" android:layout_marginBottom="16dp"/>
+
+                <!-- Vocabulary -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_vocab"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                    app:cardBackgroundColor="#E8F5E9"
+                    android:layout_marginBottom="12dp" android:alpha="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📚  Vocabulary" android:textSize="15sp" android:textStyle="bold"
+                            android:textColor="@color/text_primary" android:layout_marginBottom="10dp"/>
+                        <TextView android:id="@+id/tv_vocab_section"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="6dp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Grammar -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_grammar"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                    app:cardBackgroundColor="#EDE7F6"
+                    android:layout_marginBottom="12dp" android:alpha="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📐  Grammar" android:textSize="15sp" android:textStyle="bold"
+                            android:textColor="@color/text_primary" android:layout_marginBottom="10dp"/>
+                        <TextView android:id="@+id/tv_grammar_section"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="5dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Practice -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_practice"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                    app:cardBackgroundColor="#FFF8E1"
+                    android:layout_marginBottom="12dp" android:alpha="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="20dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="✍️  Practice" android:textSize="15sp" android:textStyle="bold"
+                            android:textColor="@color/text_primary" android:layout_marginBottom="10dp"/>
+                        <TextView android:id="@+id/tv_practice_section"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:textSize="14sp" android:textColor="@color/text_primary"
+                            android:lineSpacingExtra="5dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Tip -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_tip"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/primary"
+                    android:alpha="0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:padding="20dp" android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/tv_lesson_tip"
+                            android:textSize="14sp" android:textColor="#FFFFFF"
+                            android:lineSpacingExtra="4dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

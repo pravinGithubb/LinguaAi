@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Lernix-style title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onBackPressed"
+                android:contentDescription="Back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="32dp"
+            android:layout_marginTop="-24dp">
+
+            <TextView
+                android:id="@+id/tv_motivation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Stats grid: Streak + Sessions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    style="@style/Card.Elevated"
+                    android:layout_marginEnd="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:padding="16dp" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🔥" android:textSize="30sp" />
+                        <TextView android:id="@+id/tv_streak_value"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="24sp" android:textStyle="bold" android:textColor="@color/accent"
+                            android:layout_marginTop="4dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Day Streak" android:textSize="12sp" android:textColor="@color/text_secondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    style="@style/Card.Elevated"
+                    android:layout_marginStart="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:padding="16dp" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="💬" android:textSize="30sp" />
+                        <TextView android:id="@+id/tv_sessions_value"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="24sp" android:textStyle="bold" android:textColor="@color/primary"
+                            android:layout_marginTop="4dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Sessions" android:textSize="12sp" android:textColor="@color/text_secondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- FIX 3: Vocabulary stats card (live from Room DB) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_vocab_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Card.Elevated"
+                android:layout_marginBottom="12dp"
+                android:alpha="0">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📚" android:textSize="30sp" android:gravity="center" />
+                        <TextView android:id="@+id/tv_vocab_total"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="28sp" android:textStyle="bold"
+                            android:textColor="@color/emerald" android:gravity="center"
+                            android:layout_marginTop="4dp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Words Saved" android:textSize="12sp"
+                            android:textColor="@color/text_secondary" android:gravity="center" />
+                        <TextView android:id="@+id/tv_vocab_mastered"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0 mastered" android:textSize="11sp"
+                            android:textColor="@color/primary" android:gravity="center"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <View android:layout_width="1dp" android:layout_height="match_parent"
+                        android:background="#EEE" android:layout_marginHorizontal="12dp" />
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:gravity="center" android:padding="8dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="🎯  Vocabulary Goal"
+                            android:textSize="13sp" android:textStyle="bold"
+                            android:textColor="@color/text_primary" android:layout_marginBottom="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="Save 10 words to unlock flashcard sessions!"
+                            android:textSize="12sp" android:textColor="@color/text_secondary"
+                            android:lineSpacingExtra="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Language pair card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Card.Standard"
+                android:layout_marginBottom="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌍  Learning Journey"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_secondary"
+                        android:letterSpacing="0.05"
+                        android:layout_marginBottom="16dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/bg_lang_chip"
+                            android:padding="12dp">
+                            <TextView android:id="@+id/tv_native_flag"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textSize="28sp" android:gravity="center" />
+                            <TextView android:id="@+id/tv_native_lang"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textSize="13sp" android:textStyle="bold"
+                                android:textColor="@color/text_primary"
+                                android:layout_marginTop="4dp" android:gravity="center" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Native" android:textSize="11sp" android:textColor="@color/text_secondary" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="→" android:textSize="24sp" android:textColor="@color/primary"
+                            android:layout_marginHorizontal="16dp" android:textStyle="bold" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/bg_lang_chip_primary"
+                            android:padding="12dp">
+                            <TextView android:id="@+id/tv_target_flag"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textSize="28sp" android:gravity="center" />
+                            <TextView android:id="@+id/tv_target_lang"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textSize="13sp" android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                android:layout_marginTop="4dp" android:gravity="center" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Learning" android:textSize="11sp" android:textColor="@color/primary_light" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tips card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/gold_light">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💡" android:textSize="28sp" android:layout_marginEnd="16dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Daily Tip"
+                            android:textSize="13sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                        <TextView android:id="@+id/tv_tip"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="13sp" android:textColor="@color/text_secondary"
+                            android:lineSpacingExtra="2dp" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Lernix-style title row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="onBackPressed"
+                android:contentDescription="Back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language Packs"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="14dp">
+
+            <!-- Info / settings card -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/card_info"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                style="@style/Card.Standard" android:layout_marginBottom="12dp" android:alpha="0">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="ℹ️  How it works" android:textSize="14sp"
+                            android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        <TextView android:id="@+id/tv_downloaded_count"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textSize="12sp" android:textColor="@color/primary"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Each pack (~30 MB) lets you translate that language ↔ English fully offline. Powered by Google ML Kit."
+                        android:textSize="12sp" android:textColor="@color/text_secondary"
+                        android:lineSpacingExtra="3dp" android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switch_wifi_only"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Wi-Fi only downloads" android:textSize="13sp"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginVertical="10dp"/>
+
+                    <TextView android:id="@+id/tv_current_target"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="12sp" android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_test_offline"
+                        android:layout_width="match_parent" android:layout_height="40dp"
+                        android:text="🧪 Test Offline Translation" android:textSize="13sp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/primary" android:textColor="@color/primary"
+                        app:cornerRadius="10dp"/>
+
+                    <TextView android:id="@+id/tv_offline_test_result"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textSize="12sp" android:padding="8dp"
+                        android:visibility="gone" android:layout_marginTop="6dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Pack list -->
+            <LinearLayout android:id="@+id/layout_pack_list"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:alpha="0">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Available Packs" android:textSize="14sp" android:textStyle="bold"
+                    android:textColor="@color/text_primary" android:layout_marginBottom="10dp"/>
+
+                <LinearLayout android:id="@+id/container_packs"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

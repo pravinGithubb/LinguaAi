@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.aitranslator.app.ui.home.HomeFragment" android:label="Home">
+        <action android:id="@+id/action_home_to_chat" app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_translate" app:destination="@id/translateFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_voice" app:destination="@id/voiceFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_word_of_day" app:destination="@id/wordOfDayFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_vocabulary" app:destination="@id/vocabularyListFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_camera_ocr" app:destination="@id/cameraOcrFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_pdf_reader" app:destination="@id/pdfReaderFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <!-- Batch 3 -->
+        <action android:id="@+id/action_home_to_quiz" app:destination="@id/quizFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_daily_lesson" app:destination="@id/dailyLessonFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_streak" app:destination="@id/streakChallengeFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <!-- Batch 4 -->
+        <action android:id="@+id/action_home_to_grammar" app:destination="@id/grammarCheckerFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_pronunciation" app:destination="@id/pronunciationScorerFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <!-- Speaking Quiz (offline, level-based) -->
+        <action android:id="@+id/action_home_to_speaking_quiz" app:destination="@id/speakingQuizLevelFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <!-- Change Language (post-onboarding) -->
+        <action android:id="@+id/action_home_to_change_language" app:destination="@id/changeLanguageFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_ai_story" app:destination="@id/aiStoryFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <!-- Batch 5 -->
+        <action android:id="@+id/action_home_to_conversation" app:destination="@id/conversationModeFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_phrasebook" app:destination="@id/phrasebookFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <action android:id="@+id/action_home_to_lang_packs" app:destination="@id/languagePacksFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+        <!-- Batch 6 -->
+
+    </fragment>
+
+    <!-- Batch 1 screens -->
+    <fragment android:id="@+id/chatFragment"
+        android:name="com.aitranslator.app.ui.chat.ChatFragment" android:label="Chat"/>
+    <fragment android:id="@+id/translateFragment"
+        android:name="com.aitranslator.app.ui.translate.TranslateFragment" android:label="Translate">
+        <action android:id="@+id/action_translate_to_history_export" app:destination="@id/historyExportFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment android:id="@+id/voiceFragment"
+        android:name="com.aitranslator.app.ui.voice.VoiceFragment" android:label="Voice"/>
+    <fragment android:id="@+id/progressFragment"
+        android:name="com.aitranslator.app.ui.progress.ProgressFragment" android:label="Progress"/>
+    <fragment android:id="@+id/vocabularyListFragment"
+        android:name="com.aitranslator.app.ui.dictionary.VocabularyListFragment" android:label="Vocabulary">
+        <action android:id="@+id/action_vocabulary_to_flashcard" app:destination="@id/flashcardFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment android:id="@+id/flashcardFragment"
+        android:name="com.aitranslator.app.ui.flashcard.FlashcardFragment" android:label="Flashcards"/>
+    <fragment android:id="@+id/wordOfDayFragment"
+        android:name="com.aitranslator.app.ui.wordofday.WordOfDayFragment" android:label="Word of the Day"/>
+
+    <!-- Batch 2 screens -->
+    <fragment android:id="@+id/cameraOcrFragment"
+        android:name="com.aitranslator.app.ui.camera.CameraOcrFragment" android:label="Camera Translator"/>
+    <fragment android:id="@+id/pdfReaderFragment"
+        android:name="com.aitranslator.app.ui.pdf.PdfReaderFragment" android:label="PDF Reader"/>
+    <fragment android:id="@+id/historyExportFragment"
+        android:name="com.aitranslator.app.ui.export.HistoryExportFragment" android:label="Export History"/>
+
+    <!-- Batch 3 screens -->
+    <fragment android:id="@+id/quizFragment"
+        android:name="com.aitranslator.app.ui.quiz.QuizFragment" android:label="Quiz"/>
+    <fragment android:id="@+id/dailyLessonFragment"
+        android:name="com.aitranslator.app.ui.lesson.DailyLessonFragment" android:label="Daily Lesson"/>
+    <fragment android:id="@+id/streakChallengeFragment"
+        android:name="com.aitranslator.app.ui.streak.StreakChallengeFragment" android:label="Streak Challenges"/>
+
+    <!-- Batch 4 screens -->
+    <fragment android:id="@+id/grammarCheckerFragment"
+        android:name="com.aitranslator.app.ui.grammar.GrammarCheckerFragment" android:label="Grammar Checker"/>
+    <fragment android:id="@+id/pronunciationScorerFragment"
+        android:name="com.aitranslator.app.ui.pronunciation.PronunciationScorerFragment" android:label="Pronunciation Scorer"/>
+    <fragment android:id="@+id/aiStoryFragment"
+        android:name="com.aitranslator.app.ui.story.AiStoryFragment" android:label="AI Story"/>
+
+    <!-- Speaking Quiz (Lernix-style, fully offline) -->
+    <fragment android:id="@+id/speakingQuizLevelFragment"
+        android:name="com.aitranslator.app.ui.speakingquiz.SpeakingQuizLevelFragment"
+        android:label="Speaking Quiz">
+        <action android:id="@+id/action_speaking_level_to_quiz"
+            app:destination="@id/speakingQuizFragment"
+            app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment android:id="@+id/speakingQuizFragment"
+        android:name="com.aitranslator.app.ui.speakingquiz.SpeakingQuizFragment"
+        android:label="Speaking Quiz"/>
+
+    <!-- Change Language (post-onboarding settings) -->
+    <fragment android:id="@+id/changeLanguageFragment"
+        android:name="com.aitranslator.app.ui.settings.ChangeLanguageFragment"
+        android:label="Change Language"/>
+
+    <!-- Lernix-style 3-tab bottom nav destinations -->
+    <fragment android:id="@+id/historyFragment"
+        android:name="com.aitranslator.app.ui.history.HistoryFragment"
+        android:label="History"/>
+    <fragment android:id="@+id/settingsFragment"
+        android:name="com.aitranslator.app.ui.settings.SettingsFragment"
+        android:label="Settings"/>
+
+    <!-- Batch 5 screens -->
+    <fragment android:id="@+id/conversationModeFragment"
+        android:name="com.aitranslator.app.ui.conversation.ConversationModeFragment" android:label="Conversation Mode"/>
+    <fragment android:id="@+id/phrasebookFragment"
+        android:name="com.aitranslator.app.ui.phrasebook.PhrasebookFragment" android:label="Phrasebook"/>
+    <fragment android:id="@+id/languagePacksFragment"
+        android:name="com.aitranslator.app.ui.langpacks.LanguagePacksFragment" android:label="Language Packs"/>
+
+    <!-- Batch 6 screens -->
+
+</navigation>

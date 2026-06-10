@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tablet overrides for screen-responsive dimensions.
+  Activated automatically on devices ≥600dp wide.
+
+  The wider side padding stops the home cards from sprawling across the
+  full width of a 10" tablet — content stays centered and visually
+  consistent with the phone layout proportions.
+-->
+<resources>
+    <dimen name="screen_horizontal_padding">120dp</dimen>
+    <dimen name="home_hero_height">160dp</dimen>
+    <dimen name="home_card_height">140dp</dimen>
+</resources>

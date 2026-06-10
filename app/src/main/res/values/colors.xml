@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ════════════════════════════════════════════════════════════════════════
+   LinguaAI palette — Lernix-inspired refresh
+  ════════════════════════════════════════════════════════════════════════
+   Notes for future edits:
+     • Primary brand is a softer cornflower blue, not deep indigo. The
+       Lernix UI feels airy because of this single change — every gradient,
+       chip, and accent inherits it.
+     • Background is a near-white sky-blue (#EAF6FA family) instead of
+       neutral grey. Combined with white surface cards it gives the whole
+       app the same airy feel as Lernix.
+     • Text colour is darker (#0E1632) so it reads cleanly against the
+       cooler background.
+     • Card colours: sunny yellow, mint green, soft blue — used by the
+       home-screen feature cards.
+-->
+<resources>
+    <!-- ── Primary brand: cornflower blue ─────────────────────────────── -->
+    <color name="primary">#5B7DD8</color>
+    <color name="primary_dark">#3F5FB8</color>
+    <color name="primary_light">#7B9DF7</color>
+    <color name="primary_ultra_light">#EAF1FF</color>
+
+    <!-- ── Accent: warm coral (kept; works with new blue) ─────────────── -->
+    <color name="accent">#FF6B6B</color>
+    <color name="accent_light">#FFE8E8</color>
+    <color name="accent_dark">#E05555</color>
+
+    <!-- ── Warm gold (streak, "medium" chip) ──────────────────────────── -->
+    <color name="gold">#FFB347</color>
+    <color name="gold_light">#FFF3E0</color>
+
+    <!-- ── Emerald (success / "easy" chip) ────────────────────────────── -->
+    <color name="emerald">#5DB075</color>
+    <color name="emerald_light">#E8F5E9</color>
+
+    <!-- ── Background system: airy pale-blue, not flat grey ───────────── -->
+    <color name="background">#EAF6FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F0F7FF</color>
+
+    <!-- ── Text ───────────────────────────────────────────────────────── -->
+    <color name="text_primary">#0E1632</color>
+    <color name="text_secondary">#5C6680</color>
+    <color name="text_hint">#9AA3B8</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- ── Chat bubbles ───────────────────────────────────────────────── -->
+    <color name="bubble_user">#5B7DD8</color>
+    <color name="bubble_user_text">#FFFFFF</color>
+    <color name="bubble_ai">#FFFFFF</color>
+    <color name="bubble_ai_text">#0E1632</color>
+    <color name="bubble_ai_border">#E0E6F2</color>
+
+    <!-- ── Dividers / strokes ────────────────────────────────────────── -->
+    <color name="divider">#E0E6F2</color>
+    <color name="stroke">#C8D1E5</color>
+
+    <!-- ── Header gradient (cornflower → cyan) ───────────────────────── -->
+    <color name="grad_start">#5B7DD8</color>
+    <color name="grad_end">#3DD0D8</color>
+
+    <!-- ── Bottom-nav state ──────────────────────────────────────────── -->
+    <color name="nav_selected">#5B7DD8</color>
+    <color name="nav_unselected">#9AA3B8</color>
+
+    <!-- ── Lernix card colours (sunny yellow / mint / sky-blue) ───────── -->
+    <color name="card_yellow">#FFD568</color>
+    <color name="card_yellow_text">#3D2C00</color>
+    <color name="card_green">#5DB075</color>
+    <color name="card_green_text">#0F3D1F</color>
+    <color name="card_blue">#7B9DF7</color>
+
+    <!-- ── Shimmer ───────────────────────────────────────────────────── -->
+    <color name="shimmer_base">#E0E6F2</color>
+    <color name="shimmer_highlight">#F8FAFC</color>
+</resources>

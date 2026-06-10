@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gradient used by toolbars / hero bars across the app. Pulls from the
+     grad_start / grad_end colour tokens so a single palette update in
+     colors.xml automatically restyles everything that uses this drawable. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient android:startColor="@color/grad_start"
+              android:endColor="@color/grad_end"
+              android:angle="135"
+              android:type="linear"/>
+</shape>

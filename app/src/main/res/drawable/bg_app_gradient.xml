@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Soft pale mint → pale sky-blue gradient that gives every LinguaAI
+  screen the same airy backdrop you see in Lernix. Top is mint-tinted,
+  bottom drifts toward a slightly warmer blue. Almost-white but distinctly
+  cool — never grey.
+
+  Used as android:windowBackground in themes.xml. Individual fragment
+  layouts can still override via android:background where they need a
+  flat surface (e.g. a sheet of cards).
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:startColor="#D8F4F2"
+        android:centerColor="#EAF6FA"
+        android:endColor="#E2E8FF"
+        android:angle="270"/>
+</shape>

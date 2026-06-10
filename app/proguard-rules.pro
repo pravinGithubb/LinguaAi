@@ -1,0 +1,6 @@
+-keep class com.aitranslator.app.data.remote.model.** { *; }
+-keep class com.aitranslator.app.data.local.entity.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn okhttp3.**
+-dontwarn retrofit2.**

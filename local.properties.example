@@ -1,0 +1,20 @@
+## EXAMPLE FILE — copy this to local.properties and fill in your keys.
+## local.properties.example IS committed to Git (no real keys here).
+## local.properties is NOT committed (it's in .gitignore).
+
+# Android SDK path — update to match your machine
+# Windows example:
+sdk.dir=C\:\\Users\\YourName\\AppData\\Local\\Android\\Sdk
+# macOS/Linux example:
+# sdk.dir=/Users/yourname/Library/Android/sdk
+
+# ── LinguaAI API Keys ─────────────────────────────────────────────────────
+
+# Gemini 2.5 Flash — get free key at https://aistudio.google.com
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+
+# Google Cloud Translate — optional (app uses Gemini as fallback if missing)
+TRANSLATE_API_KEY=YOUR_GOOGLE_TRANSLATE_API_KEY_HERE
+
+# OpenAI — LlmGateway fallback when Gemini fails (safe to leave as placeholder)
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE

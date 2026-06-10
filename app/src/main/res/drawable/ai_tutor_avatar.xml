@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Stylized AI tutor avatar. Vector rendering of a friendly portrait
+  silhouette with hair, shoulders and a subtle smile — chosen so that the
+  drawable scales cleanly at any density without bundling raster assets.
+
+  Want a real photo instead? Drop "ai_tutor_avatar.png" (or .jpg) into
+  app/src/main/res/drawable-xxhdpi/ and Android will prefer that over the
+  vector automatically — no code change required.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="180dp"
+    android:viewportWidth="140"
+    android:viewportHeight="180">
+
+    <!-- Hair: warm auburn -->
+    <path
+        android:pathData="M30,70 C30,38 50,18 70,18 C90,18 110,38 110,70 C110,82 108,90 105,98 C112,108 116,118 118,130 L22,130 C24,118 28,108 35,98 C32,90 30,82 30,70 Z"
+        android:fillColor="#A0522D"/>
+
+    <!-- Face -->
+    <path
+        android:pathData="M50,55 C50,40 58,30 70,30 C82,30 90,40 90,55 L90,90 C90,103 82,112 70,112 C58,112 50,103 50,90 Z"
+        android:fillColor="#F5D5C0"/>
+
+    <!-- Hair front sweep over forehead -->
+    <path
+        android:pathData="M48,55 C48,42 56,32 70,30 C72,38 64,46 56,52 C52,55 50,56 48,55 Z"
+        android:fillColor="#8B4513"/>
+
+    <!-- Eyes -->
+    <path android:pathData="M60,68 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" android:fillColor="#3A2818"/>
+    <path android:pathData="M80,68 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" android:fillColor="#3A2818"/>
+
+    <!-- Lip -->
+    <path
+        android:pathData="M64,90 Q70,94 76,90"
+        android:strokeColor="#C66"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"/>
+
+    <!-- Shirt / shoulders: dark navy top -->
+    <path
+        android:pathData="M20,150 C20,135 35,120 60,116 L60,118 C60,124 64,128 70,128 C76,128 80,124 80,118 L80,116 C105,120 120,135 120,150 L120,180 L20,180 Z"
+        android:fillColor="#1F2A4A"/>
+
+    <!-- Subtle neck shadow -->
+    <path
+        android:pathData="M62,112 L78,112 L78,120 L62,120 Z"
+        android:fillColor="#E5C2A8"/>
+</vector>

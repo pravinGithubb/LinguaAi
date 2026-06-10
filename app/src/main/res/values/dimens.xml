@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Default (phone) dimensions for screen-size responsiveness.
+  Overridden in values-sw600dp/ for tablets.
+
+  When you want a layout to be wider on phones but narrower on tablets,
+  reference these dimens in your layout instead of hard-coding dp values.
+  Example: android:paddingHorizontal="@dimen/screen_horizontal_padding"
+-->
+<resources>
+    <!-- Side padding on the home / settings / history screens. Tablets
+         override this with a much larger value to keep content centered
+         and readable rather than sprawling edge-to-edge. -->
+    <dimen name="screen_horizontal_padding">20dp</dimen>
+
+    <!-- Hero card heights -->
+    <dimen name="home_hero_height">140dp</dimen>
+    <dimen name="home_card_height">125dp</dimen>
+</resources>

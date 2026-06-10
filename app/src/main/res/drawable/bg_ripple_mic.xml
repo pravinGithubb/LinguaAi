@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#445B7DD8">
+    <item android:id="@android:id/mask">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF"/>
+            <size android:width="80dp" android:height="80dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/bg_mic_button"/>
+</ripple>

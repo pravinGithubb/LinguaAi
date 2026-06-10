@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Vocabulary card illustration — stack of three coloured books with a
+  pencil. Designed to read at 80×80dp. Replace with a raster PNG of the
+  same name in drawable-xxxhdpi/ for higher fidelity.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+
+    <!-- Bottom book: red -->
+    <path
+        android:pathData="M10,55 L10,68 L66,68 L66,55 Z"
+        android:fillColor="#E64C4C"/>
+    <path
+        android:pathData="M10,55 L66,55 L66,57 L10,57 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Middle book: yellow -->
+    <path
+        android:pathData="M14,42 L14,55 L62,55 L62,42 Z"
+        android:fillColor="#FFC93C"/>
+    <path
+        android:pathData="M14,42 L62,42 L62,44 L14,44 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Top book: blue, slightly rotated visual via offset -->
+    <path
+        android:pathData="M20,28 L20,42 L58,42 L58,28 Z"
+        android:fillColor="#4C7CE6"/>
+    <path
+        android:pathData="M20,28 L58,28 L58,30 L20,30 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Bookmark on top book -->
+    <path
+        android:pathData="M48,28 L48,38 L51,35 L54,38 L54,28 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Pencil leaning on the books -->
+    <path
+        android:pathData="M55,18 L65,8 L70,13 L60,23 Z"
+        android:fillColor="#FFB347"/>
+    <!-- Pencil tip -->
+    <path
+        android:pathData="M55,18 L52,21 L57,26 L60,23 Z"
+        android:fillColor="#3A2818"/>
+    <!-- Pencil eraser -->
+    <path
+        android:pathData="M65,8 L68,5 L72,9 L70,13 Z"
+        android:fillColor="#E64C4C"/>
+</vector>
