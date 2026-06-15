@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 
 import com.aitranslator.app.databinding.FragmentChangeLanguageBinding;
 import com.aitranslator.app.utils.AnimUtils;
+import com.aitranslator.app.utils.FlagLanguageAdapter;
 import com.aitranslator.app.utils.LanguageUtils;
 import com.aitranslator.app.utils.PrefsManager;
 

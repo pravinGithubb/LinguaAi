@@ -141,3 +141,4 @@ dependencies {
     // Core testing utilities (InstantTaskExecutorRule for LiveData)
     testImplementation 'androidx.arch.core:core-testing:2.2.0'
     androidTestImplementation 'androidx.arch.core:core-testing:2.2.0'
+}

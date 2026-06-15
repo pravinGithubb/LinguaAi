@@ -152,8 +152,8 @@ public class MainActivityUiTest {
     @Test
     public void tapTranslateCard_OpensTranslateScreen() {
         onView(withId(R.id.card_translate)).perform(click());
-        // Translate screen has et_source_text
-        onView(withId(R.id.et_source_text))
+        // Translate screen has et_input
+        onView(withId(R.id.et_input))
                 .check(matches(isDisplayed()));
     }
 
