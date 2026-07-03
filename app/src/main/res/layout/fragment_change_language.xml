@@ -40,14 +40,14 @@
                 android:tint="@color/text_primary"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:onClick="onBackPressed"
-                android:contentDescription="Back"
+                android:contentDescription="@string/btn_back"
                 android:layout_marginStart="-8dp"
                 android:layout_marginEnd="8dp"/>
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change Language"
+                android:text="@string/title_change_language"
                 android:textColor="@color/text_primary"
                 android:textSize="26sp"
                 android:textStyle="bold"/>
@@ -57,7 +57,7 @@
             android:id="@+id/tv_subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update the language you speak and the language you're learning"
+            android:text="@string/subtitle_change_language"
             android:textColor="@color/text_secondary"
             android:textSize="14sp"
             android:layout_marginTop="2dp"
@@ -87,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="I speak"
+                    android:text="@string/label_i_speak"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp"
                     android:letterSpacing="0.05"
@@ -134,7 +134,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="I'm learning"
+                    android:text="@string/label_im_learning"
                     android:textColor="@color/text_secondary"
                     android:textSize="12sp"
                     android:letterSpacing="0.05"
@@ -163,7 +163,7 @@
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:text="Save Changes"
+            android:text="@string/btn_save_changes"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -175,7 +175,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tip: the Speaking Quiz now supports Hindi too — pick Hindi as your learning language to practice with Hindi sentences."
+            android:text="@string/tip_hindi_support"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:layout_marginTop="20dp"

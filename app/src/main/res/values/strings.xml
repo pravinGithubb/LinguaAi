@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">LinguaAI</string>
     <string name="nav_home">Home</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
     <string name="nav_chat">Chat</string>
     <string name="nav_translate">Translate</string>
     <string name="nav_voice">Voice</string>
@@ -20,4 +22,34 @@
     <string name="voice_processing">Translating&#8230;</string>
     <string name="voice_done">Done &#183; Tap mic to translate again</string>
     <string name="mic_permission_rationale">Microphone access is needed to hear your speech and translate it</string>
+
+    <string name="btn_back">Back</string>
+    <string name="title_change_language">Change Language</string>
+    <string name="subtitle_change_language">Update the language you speak and the language you\'re learning</string>
+    <string name="label_i_speak">I speak</string>
+    <string name="label_im_learning">I\'m learning</string>
+    <string name="btn_save_changes">Save Changes</string>
+    <string name="tip_hindi_support">Tip: the Speaking Quiz now supports Hindi too — pick Hindi as your learning language to practice with Hindi sentences.</string>
+    <string name="error_pick_both_languages">Please pick both languages</string>
+    <string name="error_different_languages">Please choose two different languages</string>
+    <string name="msg_saved_learning">Saved — now learning %1$s</string>
+
+    <string name="title_history">History</string>
+    <string name="label_streak">🔥 Streak</string>
+    <string name="label_sessions">📊 Sessions</string>
+    <string name="label_total_xp">⭐ Total XP</string>
+    <string name="label_xp_week">XP this week</string>
+    <string name="label_recent_activity">Recent activity</string>
+    <string name="msg_no_activity">No activity yet — start with a chat, quiz or translation.</string>
+    <string name="btn_export_history">Open full history &amp; export</string>
+
+    <string name="title_settings">Settings</string>
+    <string name="label_streak_challenge">Streak Challenge</string>
+    <string name="subtitle_streak_challenge">Goals, badges, weekly target</string>
+    <string name="label_offline_packs">Offline Language Packs</string>
+    <string name="subtitle_offline_packs">Download for offline translation</string>
+    <string name="label_export_history_card">Export History</string>
+    <string name="subtitle_export_history">Download as PDF or text</string>
+    <string name="label_about">About LinguaAI</string>
+    <string name="subtitle_version_info">Version info</string>
 </resources>

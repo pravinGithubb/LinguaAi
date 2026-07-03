@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="History"
+            android:text="@string/title_history"
             android:textColor="@color/text_primary"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -49,7 +49,7 @@
                         android:textColor="@color/text_primary"
                         android:textSize="22sp" android:textStyle="bold"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="🔥 Streak"
+                        android:text="@string/label_streak"
                         android:textColor="@color/text_secondary"
                         android:textSize="11sp" android:layout_marginTop="2dp"/>
                 </LinearLayout>
@@ -69,7 +69,7 @@
                         android:textColor="@color/text_primary"
                         android:textSize="22sp" android:textStyle="bold"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="📊 Sessions"
+                        android:text="@string/label_sessions"
                         android:textColor="@color/text_secondary"
                         android:textSize="11sp" android:layout_marginTop="2dp"/>
                 </LinearLayout>
@@ -89,7 +89,7 @@
                         android:textColor="@color/text_primary"
                         android:textSize="22sp" android:textStyle="bold"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="⭐ Total XP"
+                        android:text="@string/label_total_xp"
                         android:textColor="@color/text_secondary"
                         android:textSize="11sp" android:layout_marginTop="2dp"/>
                 </LinearLayout>
@@ -100,7 +100,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="XP this week"
+            android:text="@string/label_xp_week"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -126,7 +126,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recent activity"
+            android:text="@string/label_recent_activity"
             android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -145,7 +145,7 @@
             android:id="@+id/tv_empty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No activity yet — start with a chat, quiz or translation."
+            android:text="@string/msg_no_activity"
             android:textColor="@color/text_secondary"
             android:textSize="14sp"
             android:gravity="center"
@@ -157,7 +157,7 @@
             android:id="@+id/btn_export"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:text="Open full history &amp; export"
+            android:text="@string/btn_export_history"
             android:textColor="@color/primary"
             android:textSize="14sp"
             android:textAllCaps="false"

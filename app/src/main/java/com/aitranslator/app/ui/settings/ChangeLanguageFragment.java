@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.aitranslator.app.R;
 import com.aitranslator.app.databinding.FragmentChangeLanguageBinding;
 import com.aitranslator.app.utils.AnimUtils;
 import com.aitranslator.app.utils.FlagLanguageAdapter;
@@ -85,12 +86,12 @@ public class ChangeLanguageFragment extends Fragment {
     private void save(View source) {
         if (selectedNative == null || selectedTarget == null) {
             Toast.makeText(requireContext(),
-                    "Please pick both languages", Toast.LENGTH_SHORT).show();
+                    R.string.error_pick_both_languages, Toast.LENGTH_SHORT).show();
             return;
         }
         if (selectedNative.equals(selectedTarget)) {
             Toast.makeText(requireContext(),
-                    "Please choose two different languages", Toast.LENGTH_SHORT).show();
+                    R.string.error_different_languages, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -100,7 +101,7 @@ public class ChangeLanguageFragment extends Fragment {
         prefs.setTargetLanguage(selectedTarget, LanguageUtils.getCode(selectedTarget));
 
         Toast.makeText(requireContext(),
-                "Saved — now learning " + selectedTarget, Toast.LENGTH_SHORT).show();
+                getString(R.string.msg_saved_learning, selectedTarget), Toast.LENGTH_SHORT).show();
 
         // Pop back to home after a beat so the pulse animation can play.
         source.postDelayed(() -> {

@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/title_settings"
             android:textColor="@color/text_primary"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -49,7 +49,7 @@
                     android:layout_weight="1" android:orientation="vertical"
                     android:layout_marginStart="14dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Change Language"
+                        android:text="@string/title_change_language"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" android:textStyle="bold"/>
                     <TextView android:id="@+id/tv_lang_subtitle"
@@ -83,11 +83,11 @@
                     android:layout_weight="1" android:orientation="vertical"
                     android:layout_marginStart="14dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Streak Challenge"
+                        android:text="@string/label_streak_challenge"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" android:textStyle="bold"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Goals, badges, weekly target"
+                        android:text="@string/subtitle_streak_challenge"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -116,11 +116,11 @@
                     android:layout_weight="1" android:orientation="vertical"
                     android:layout_marginStart="14dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Offline Language Packs"
+                        android:text="@string/label_offline_packs"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" android:textStyle="bold"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Download for offline translation"
+                        android:text="@string/subtitle_offline_packs"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -149,11 +149,11 @@
                     android:layout_weight="1" android:orientation="vertical"
                     android:layout_marginStart="14dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Export History"
+                        android:text="@string/label_export_history_card"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" android:textStyle="bold"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Download as PDF or text"
+                        android:text="@string/subtitle_export_history"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -181,12 +181,12 @@
                     android:layout_weight="1" android:orientation="vertical"
                     android:layout_marginStart="14dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="About LinguaAI"
+                        android:text="@string/label_about"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp" android:textStyle="bold"/>
                     <TextView android:id="@+id/tv_about_subtitle"
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Version info"
+                        android:text="@string/subtitle_version_info"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp"/>
                 </LinearLayout>

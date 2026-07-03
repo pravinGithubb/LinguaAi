@@ -48,6 +48,10 @@ public class MainActivityUiTest {
     public ActivityScenarioRule<MainActivity> activityRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
+    /**
+     * Skips the onboarding flow by setting the corresponding preference in {@link PrefsManager}.
+     * This ensures tests start directly on the main activity's home screen.
+     */
     @Before
     public void skipOnboarding() {
         // Mark onboarding as complete so the activity starts on HomeFragment.
@@ -61,22 +65,35 @@ public class MainActivityUiTest {
     //  Bottom navigation
     // ─────────────────────────────────────────────────────────────────────────
 
+    /**
+     * Verifies that the bottom navigation bar is displayed when the activity starts.
+     */
     @Test
     public void bottomNav_IsVisible() {
         onView(withId(R.id.bottom_navigation))
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the bottom navigation contains the expected tab labels.
+     */
     @Test
     public void bottomNav_HasThreeTabs() {
         // Verify all three tab labels are present in the nav menu
         onView(withId(R.id.bottom_navigation))
                 .check(matches(isDisplayed()));
         // Check that each menu item text is present somewhere on screen
-        onView(withText("Home"))
+        onView(withText(R.string.nav_home))
+                .check(matches(isDisplayed()));
+        onView(withText(R.string.nav_history))
+                .check(matches(isDisplayed()));
+        onView(withText(R.string.nav_settings))
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Tests navigation to the History fragment via the bottom navigation bar.
+     */
     @Test
     public void tapHistory_ShowsHistoryFragment() {
         onView(withId(R.id.historyFragment)).perform(click());
@@ -85,6 +102,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Tests navigation to the Settings fragment via the bottom navigation bar.
+     */
     @Test
     public void tapSettings_ShowsSettingsFragment() {
         onView(withId(R.id.settingsFragment)).perform(click());
@@ -93,6 +113,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that navigating to History and then back to Home works correctly.
+     */
     @Test
     public void tapHistory_ThenHome_ReturnsToHome() {
         onView(withId(R.id.historyFragment)).perform(click());
@@ -102,6 +125,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Regression test: ensures that tapping the History tab twice keeps the user on the History screen.
+     */
     @Test
     public void tapHistory_Twice_StaysOnHistory() {
         // Regression: second tap used to get stuck or mis-highlight
@@ -115,30 +141,45 @@ public class MainActivityUiTest {
     //  Home screen — primary cards
     // ─────────────────────────────────────────────────────────────────────────
 
+    /**
+     * Verifies that the AI Chat card is visible on the Home screen.
+     */
     @Test
     public void home_AiChatCard_IsVisible() {
         onView(withId(R.id.card_ai_chat))
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the Vocabulary card is visible on the Home screen.
+     */
     @Test
     public void home_VocabularyCard_IsVisible() {
         onView(withId(R.id.card_vocabulary))
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the Translate card is visible on the Home screen.
+     */
     @Test
     public void home_TranslateCard_IsVisible() {
         onView(withId(R.id.card_translate))
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the Practice card is visible on the Home screen.
+     */
     @Test
     public void home_PracticeCard_IsVisible() {
         onView(withId(R.id.card_practice))
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the More Options card is visible on the Home screen.
+     */
     @Test
     public void home_MoreOptionsCard_IsVisible() {
         onView(withId(R.id.card_more_options))
@@ -149,6 +190,9 @@ public class MainActivityUiTest {
     //  Navigation from home
     // ─────────────────────────────────────────────────────────────────────────
 
+    /**
+     * Tests that clicking the Translate card navigates to the translation screen.
+     */
     @Test
     public void tapTranslateCard_OpensTranslateScreen() {
         onView(withId(R.id.card_translate)).perform(click());
@@ -157,6 +201,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Tests that clicking the Practice card navigates to the Speaking Quiz level selection screen.
+     */
     @Test
     public void tapPracticeCard_OpensSpeakingQuizLevel() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -165,6 +212,10 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the system back button correctly returns the user to the Home screen
+     * from the Practice level picker.
+     */
     @Test
     public void tapPracticeCard_BackButton_ReturnsHome() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -181,6 +232,10 @@ public class MainActivityUiTest {
     //  Speaking Quiz Level screen
     // ─────────────────────────────────────────────────────────────────────────
 
+    /**
+     * Verifies that all three difficulty levels (Beginner, Intermediate, Advanced)
+     * are displayed on the Speaking Quiz level selection screen.
+     */
     @Test
     public void speakingQuizLevel_AllThreeCardsVisible() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -192,6 +247,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Tests that selecting the Beginner level opens the quiz interface.
+     */
     @Test
     public void speakingQuizLevel_TapBeginner_OpensQuizScreen() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -201,6 +259,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the quiz screen displays a sentence to the user.
+     */
     @Test
     public void speakingQuiz_SentenceIsNotEmpty() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -210,6 +271,9 @@ public class MainActivityUiTest {
                 .check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
     }
 
+    /**
+     * Verifies that the countdown timer is visible on the quiz screen.
+     */
     @Test
     public void speakingQuiz_TimerVisible() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -218,6 +282,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the microphone button is present on the quiz screen for voice input.
+     */
     @Test
     public void speakingQuiz_MicButtonVisible() {
         onView(withId(R.id.card_practice)).perform(click());
@@ -230,6 +297,9 @@ public class MainActivityUiTest {
     //  Settings → Change Language
     // ─────────────────────────────────────────────────────────────────────────
 
+    /**
+     * Verifies the presence of the Change Language option in the Settings screen.
+     */
     @Test
     public void settings_ChangeLanguageCard_IsVisible() {
         onView(withId(R.id.settingsFragment)).perform(click());
@@ -237,6 +307,9 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Tests navigation to the Change Language screen from Settings.
+     */
     @Test
     public void settings_TapChangeLanguage_OpensScreen() {
         onView(withId(R.id.settingsFragment)).perform(click());
@@ -246,12 +319,15 @@ public class MainActivityUiTest {
                 .check(matches(isDisplayed()));
     }
 
+    /**
+     * Verifies that the Change Language screen includes a navigation back button.
+     */
     @Test
     public void settings_ChangeLanguage_HasBackButton() {
         onView(withId(R.id.settingsFragment)).perform(click());
         onView(withId(R.id.card_change_language)).perform(click());
         // The back button from our fix should be visible
-        onView(withContentDescription("Back"))
+        onView(withContentDescription(R.string.btn_back))
                 .check(matches(isDisplayed()));
     }
 
@@ -259,6 +335,11 @@ public class MainActivityUiTest {
     //  Regression: Export-stuck bug (fix 2 in v25)
     // ─────────────────────────────────────────────────────────────────────────
 
+    /**
+     * Regression test for the "Export-stuck" bug:
+     * Verifies that navigating away from the Export screen and back to History
+     * correctly resets the view to the History fragment instead of staying on Export.
+     */
     @Test
     public void history_OpenExport_TapHome_TapHistory_ShowsHistoryNotExport() {
         // Reproduce the exact bug flow from the bug report
